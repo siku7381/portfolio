@@ -11,10 +11,13 @@ import Footer from './components/Footer/Footer';
 export default function App() {
 
   return (
-    <div className='r'>
+    <div className='relative z-0 bg-primary'>
       <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+          {/* <Navbar />
+          <Hero /> */}
         <Header />
-        <div className="container is-fluid">
+        </div>
+        <div className=" is-fluid">
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='*' element={<PageNotFound />} />
@@ -24,7 +27,6 @@ export default function App() {
           </Routes>
         </div>
         <Footer />
-      </div>
     </div>
   );
 }
