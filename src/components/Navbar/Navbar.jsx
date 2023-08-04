@@ -1,64 +1,54 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { styles } from "../styles";
-import { navLinks } from "../constants";
-import { logo, menu, close } from "../assets";
+import { styles } from "../../styles";
+import { menu, close, logo } from "../../assets";
+import { useDispatch, useSelector } from "react-redux";
+import { changeMenu } from "../../store";
 
 const Navbar = () => {
-  const [active, setActive] = useState("");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const navs = useSelector((state) => {
+      return state.navs;
+  });
+
+  const handleClick = (navItem) => {
+      dispatch(changeMenu(navItem.name));
+      navigate(navItem.href)
+  }
+
   const [toggle, setToggle] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <nav
       className={`${
         styles.paddingX
-      } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-primary" : "bg-transparent"
-      }`}
+      } w-full flex items-center py-5 top-0 z-20 bg-primary`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
-        <Link
-          to='/'
+        <div
           className='flex items-center gap-2'
-          onClick={() => {
-            setActive("");
-            window.scrollTo(0, 0);
-          }}
         >
           <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
-          <p className='text-white text-[18px] font-bold cursor-pointer flex '>
+          <p className='text-white text-[18px] font-bold cursor-pointer flex ' onClick={() => navigate('/')}>
             OFC &nbsp;
             <span className='sm:block hidden'> | Odisha Freelancer Community</span>
           </p>
-        </Link>
+        </div>
 
         <ul className='list-none hidden sm:flex flex-row gap-10'>
-          {navLinks.map((nav) => (
+          {navs.map((nav) => (
             <li
-              key={nav.id}
+              key={nav.name}
               className={`${
-                active === nav.title ? "text-white" : "text-secondary"
+                nav.current ? "text-white" : "text-secondary"
               } hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(nav.title)}
+              // onClick={() => setActive(nav.title)}
+              onClick={() => handleClick(nav)}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              {nav.name}
             </li>
           ))}
         </ul>
@@ -77,18 +67,19 @@ const Navbar = () => {
             } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
             <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
-              {navLinks.map((nav) => (
+              {navs.map((nav) => (
                 <li
-                  key={nav.id}
+                  key={nav.name}
                   className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-white" : "text-secondary"
+                    nav.current ? "text-white" : "text-secondary"
                   }`}
                   onClick={() => {
-                    setToggle(!toggle);
-                    setActive(nav.title);
+                    handleClick(nav)
+                    // setToggle(!toggle);
+                    // setActive(nav.name);
                   }}
                 >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
+                  {nav.name}
                 </li>
               ))}
             </ul>

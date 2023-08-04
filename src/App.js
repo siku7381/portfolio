@@ -2,20 +2,21 @@ import { Routes, Route } from 'react-router-dom';
 import "./style.css";
 import Playlist from './components/Playlists/Playlist';
 import PageNotFound from './components/PageNotFound';
-import Header from './components/Header';
+// import Header from './components/Header';
 import Car from './components/Cars';
 import Home from './components/Home/Home';
 import About from './components/About';
 import Footer from './components/Footer/Footer';
+import Navbar from './components/Navbar/Navbar';
 
 export default function App() {
 
   return (
     <div className='relative z-0 bg-primary'>
       <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-          {/* <Navbar />
-          <Hero /> */}
-        <Header />
+          <Navbar />
+          {/* <Hero /> */}
+        {/* <Header /> */}
         </div>
         <div className=" is-fluid">
           <Routes>

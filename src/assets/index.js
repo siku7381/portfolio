@@ -29,6 +29,7 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import srikanta from "./srikanta.png";
+import logo from "./logo.jpeg";
 
 export {
   backend,
@@ -58,5 +59,6 @@ export {
   carrent,
   jobit,
   tripguide,
-  srikanta
+  srikanta,
+  logo
 };

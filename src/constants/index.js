@@ -205,15 +205,15 @@ const projects = [
     tags: [
       {
         name: "react",
-        color: "blue-text-gradient",
+        color: "text-blue-500",
       },
       {
         name: "mongodb",
-        color: "green-text-gradient",
+        color: "text-green-500",
       },
       {
         name: "tailwind",
-        color: "pink-text-gradient",
+        color: "text-pink-500",
       },
     ],
     image: carrent,
@@ -226,15 +226,15 @@ const projects = [
     tags: [
       {
         name: "react",
-        color: "blue-text-gradient",
+        color: "text-blue-500",
       },
       {
         name: "restapi",
-        color: "green-text-gradient",
+        color: "text-green-500",
       },
       {
         name: "scss",
-        color: "pink-text-gradient",
+        color: "text-pink-500",
       },
     ],
     image: jobit,
@@ -247,15 +247,15 @@ const projects = [
     tags: [
       {
         name: "nextjs",
-        color: "blue-text-gradient",
+        color: "text-blue-500",
       },
       {
         name: "supabase",
-        color: "green-text-gradient",
+        color: "text-green-500",
       },
       {
         name: "css",
-        color: "pink-text-gradient",
+        color: "text-pink-500",
       },
     ],
     image: tripguide,

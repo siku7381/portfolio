@@ -21,12 +21,12 @@ const CardForm = () => {
     }))
   }
   return (
-    <div className='car-form panel p-3'>
-      <h4 className='subtitle is-3'>Add Car </h4>
+    <div className='car-form panel p-5'>
+      <h4 className='subtitle is-3 text-white'>Add Car </h4>
       <form onSubmit={handleSubmit}>
         <div className='field-group flex justify-around items-center'>
           <div className='field'>
-            <label className='label'>Name</label>
+            <label className='label text-white'>Name</label>
             <input 
               className='input is-expanded'
               value={name}
@@ -34,7 +34,7 @@ const CardForm = () => {
             />
           </div>
           <div className='field'>
-            <label className='label'>Cost</label>
+            <label className='label text-white'>Cost</label>
             <input 
               className='input is-expanded'
               value={cost || ''}

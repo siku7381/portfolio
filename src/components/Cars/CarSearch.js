@@ -13,10 +13,10 @@ const CarSearch = () => {
     dispatch(changeSearchTerm(e.target.value))
   }
   return (
-    <div className='list-header my-5'>
-      <h3 className='title is-3'>My Cars</h3>
+    <div className='list-header my-5 p-3'>
+      <h3 className='title is-3 text-white'>My Cars</h3>
       <div className='search field is-horizontal'>
-        <label className='label'>Search</label>
+        <label className='label text-white'>Search</label>
         <input 
           className='input'
           value={searchTerm}

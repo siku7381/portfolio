@@ -10,7 +10,7 @@ const CarValue = () => {
     },0)
   })
   return (
-    <div className='car-value'>
+    <div className='car-value text-white'>
       Total Cost: ₹ {convertToCrore(totalCost)} Cr.
     </div>
   )

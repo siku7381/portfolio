@@ -21,7 +21,7 @@ const CarList = () => {
   const renderedCars = cars.map(car => {
     const bold = name && car.name.toLowerCase().includes(name.toLowerCase());
     return (
-      <div key={car.id} className={`panel ${bold && 'text-blue-600 font-bold'}`}>
+      <div key={car.id} className={`panel ${bold && 'text-blue-600 font-bold border-2 border-indigo-500'}`}>
         <p>
           {car.name} - ₹ {convertToCrore(car.cost)} Cr.
         </p>
@@ -35,7 +35,7 @@ const CarList = () => {
     )
   })
   return (
-    <div className="car-list">
+    <div className="car-list text-white">
       {
         renderedCars
       }
