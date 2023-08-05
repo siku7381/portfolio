@@ -5,7 +5,7 @@ import { styles } from "../styles";
 import {  teams } from "../constants";//services,
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
-import { ProjectCard } from "./Cards/Cards";
+import { TeamCard } from "./Cards/Cards";
 
 
 
@@ -31,7 +31,7 @@ const About = () => {
       <div className='mt-20 flex flex-wrap gap-10'>
         {teams.map((team, index) => (
           // <ServiceCard key={service.title} index={index} {...service} />
-          <ProjectCard key={`project-${index}`} index={index} {...team} />
+          <TeamCard key={`project-${index}`} index={index} {...team} />
         ))}
       </div>
     </>

@@ -1,13 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 import "./style.css";
-import Playlist from './components/Playlists/Playlist';
 import PageNotFound from './components/PageNotFound';
-// import Header from './components/Header';
-import Car from './components/Cars';
 import Home from './components/Home/Home';
 import About from './components/About';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import { StarsCanvas } from './components/canvas';
 
 export default function App() {
 
@@ -22,12 +22,13 @@ export default function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='*' element={<PageNotFound />} />
-            <Route path='/playlist' element={<Playlist />} />
-            <Route path='/car' element={<Car />} />
             <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/projects' element={<Projects />} />
           </Routes>
         </div>
         <Footer />
+        <StarsCanvas />
     </div>
   );
 }

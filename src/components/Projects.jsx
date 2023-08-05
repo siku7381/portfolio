@@ -33,6 +33,7 @@ const Projects = () => {
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
+      
     </>
   );
 };

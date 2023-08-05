@@ -4,10 +4,11 @@ const NavSlices = createSlice({
     name: "nav",
     initialState: [
         { name: 'Home', href: '/', current: true },
-        { name: 'Playlists', href: '/playlist', current: false },
-        { name: 'Cars', href: '/car', current: false },
+        // { name: 'Playlists', href: '/playlist', current: false },
+        // { name: 'Cars', href: '/car', current: false },
+        { name: 'Projects', href: '/projects', current: false },
         { name: 'About', href: '/about', current: false },
-        //   { name: 'Reports', href: '#', current: false },
+        { name: 'Contact', href: '/contact', current: false },
     ],
     reducers: {
         changeMenu: (state, action) => {
