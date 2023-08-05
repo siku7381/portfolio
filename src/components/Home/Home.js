@@ -10,7 +10,7 @@ import Testimonials from '../Testimonials';
 const Home = () => {
   return (
     <div className=''>
-      <div className=''>
+      <div className='relative z-0'>
 
         <Hero />
         <About />
